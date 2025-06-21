@@ -6,18 +6,33 @@ Bu script, Splunk HEC'ye test logları gönderir.
 
 import json
 import requests
+import os
 from datetime import datetime
 
-# Splunk HEC ayarları
+# .env dosyasını yükle
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("⚠️  python-dotenv yüklü değil. Environment variable'ları manuel olarak ayarlayın.")
+    print("pip install python-dotenv")
+
+# Splunk HEC ayarları - Environment variable'lardan alınır
 SPLUNK_CONFIG = {
-    "hec_url": "https://127.0.0.1:8088/services/collector",
-    "hec_token": "e403d02d-699c-4f62-8512-b369fbd825ea",
+    "hec_url": os.getenv("SPLUNK_HEC_URL", "https://127.0.0.1:8088/services/collector"),
+    "hec_token": os.getenv("SPLUNK_HEC_TOKEN", ""),
     "sourcetype": "erp_logs",
     "index": "main"
 }
 
 def send_test_logs():
     """Test logları gönderir"""
+    
+    # HEC token kontrolü
+    if not SPLUNK_CONFIG['hec_token']:
+        print("❌ HATA: SPLUNK_HEC_TOKEN environment variable'ı tanımlanmamış!")
+        print("Lütfen .env dosyasında SPLUNK_HEC_TOKEN değerini tanımlayın.")
+        return
     
     # Test logları
     test_logs = [
