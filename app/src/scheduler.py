@@ -124,6 +124,15 @@ class LogScheduler:
                     )
                     all_logs.extend(formatted_audit_logs)
                     self.logger.info(f"Collected {len(formatted_audit_logs)} IFS audit logs")
+                
+                # Kullanıcı etkinliği logları
+                ifs_user_activity_logs = self.ifs_client.get_user_activity_logs()
+                if ifs_user_activity_logs:
+                    formatted_user_activity_logs = self.log_formatter.format_logs_for_splunk(
+                        ifs_user_activity_logs, "IFS Applications"
+                    )
+                    all_logs.extend(formatted_user_activity_logs)
+                    self.logger.info(f"Collected {len(formatted_user_activity_logs)} IFS user activity logs")
             
             # Infor loglarını topla
             if self.infor_client:
@@ -146,6 +155,15 @@ class LogScheduler:
                     )
                     all_logs.extend(formatted_audit_logs)
                     self.logger.info(f"Collected {len(formatted_audit_logs)} Infor audit logs")
+                
+                # Kullanıcı etkinliği logları
+                infor_user_activity_logs = self.infor_client.get_user_activity_logs()
+                if infor_user_activity_logs:
+                    formatted_user_activity_logs = self.log_formatter.format_logs_for_splunk(
+                        infor_user_activity_logs, "Infor CloudSuite"
+                    )
+                    all_logs.extend(formatted_user_activity_logs)
+                    self.logger.info(f"Collected {len(formatted_user_activity_logs)} Infor user activity logs")
             
             # Splunk'a gönder
             if self.splunk_sender and all_logs:

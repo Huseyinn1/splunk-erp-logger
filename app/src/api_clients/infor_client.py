@@ -81,6 +81,36 @@ class InforClient:
             self.logger.error(f"Error fetching Infor audit logs: {str(e)}")
             return []
     
+    def get_user_activity_logs(self, last_check_time: str = None) -> List[Dict[str, Any]]:
+        """Kullanıcı etkinliği loglarını çeker"""
+        if self.use_mock_data:
+            return self._get_mock_user_activity_logs()
+        
+        try:
+            endpoint = f"{self.base_url}{self.config['user_activity_logs']['endpoint']}"
+            params = {}
+            
+            if last_check_time:
+                params['since'] = last_check_time
+                
+            response = requests.get(
+                endpoint,
+                auth=HTTPBasicAuth(self.username, self.password),
+                params=params,
+                timeout=self.timeout,
+                verify=False  # Geliştirme ortamı için
+            )
+            
+            if response.status_code == 200:
+                return response.json()
+            else:
+                self.logger.error(f"Infor user activity logs API error: {response.status_code}")
+                return []
+                
+        except Exception as e:
+            self.logger.error(f"Error fetching Infor user activity logs: {str(e)}")
+            return []
+    
     def _get_mock_system_logs(self) -> List[Dict[str, Any]]:
         """Mock sistem loglarını okur"""
         try:
@@ -115,4 +145,22 @@ class InforClient:
             
         except Exception as e:
             self.logger.error(f"Error reading mock Infor audit logs: {str(e)}")
+            return []
+    
+    def _get_mock_user_activity_logs(self) -> List[Dict[str, Any]]:
+        """Mock kullanıcı etkinliği loglarını okur"""
+        try:
+            mock_file = os.path.join(self.mock_data_path, 'infor_user_activity_logs.json')
+            with open(mock_file, 'r', encoding='utf-8') as f:
+                logs = json.load(f)
+            
+            # Timestamp'i güncelle
+            current_time = datetime.utcnow().isoformat() + 'Z'
+            for log in logs:
+                log['timestamp'] = current_time
+                
+            return logs
+            
+        except Exception as e:
+            self.logger.error(f"Error reading mock Infor user activity logs: {str(e)}")
             return []

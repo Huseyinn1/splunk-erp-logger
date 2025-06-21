@@ -32,6 +32,11 @@ ifs:
     enabled: true
     endpoint: "/audit/logs"
     last_check_file: "app/logs/ifs_audit_last_check.txt"
+  
+  user_activity_logs:
+    enabled: true
+    endpoint: "/user-activity/logs"
+    last_check_file: "app/logs/ifs_user_activity_last_check.txt"
 
 # Infor CloudSuite ayarları
 infor:
@@ -52,6 +57,11 @@ infor:
     enabled: true
     endpoint: "/audit/logs"
     last_check_file: "app/logs/infor_audit_last_check.txt"
+  
+  user_activity_logs:
+    enabled: true
+    endpoint: "/user-activity/logs"
+    last_check_file: "app/logs/infor_user_activity_last_check.txt"
 
 # Splunk HEC ayarları
 splunk:

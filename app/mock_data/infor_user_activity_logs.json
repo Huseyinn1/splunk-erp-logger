@@ -1,0 +1,99 @@
+[
+  {
+    "timestamp": "2024-06-21T13:50:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "user_activity",
+    "message": {
+      "activity_type": "Export Records",
+      "user_id": "sales_rep_anna",
+      "target_entity": "Contacts",
+      "filter_applied": "Region: North, Status: Active",
+      "record_count": 550,
+      "export_format": "CSV",
+      "description": "User 'sales_rep_anna' exported 550 active contacts from North region."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T13:55:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "user_activity",
+    "message": {
+      "provisioning_event": {
+        "userName": "new.employee@example.com",
+        "active": true,
+        "displayName": "New Employee",
+        "externalId": "emp7890",
+        "name.familyName": "Employee",
+        "name.givenName": "New",
+        "emails": [
+          {
+            "type": "work",
+            "value": "new.employee@example.com"
+          }
+        ],
+        "event_type": "User_Updated",
+        "provisioning_status": "Success",
+        "provisioning_cycle_id": "cycle_def456",
+        "changes": {
+          "attribute_changed": "active",
+          "old_value": "false",
+          "new_value": "true"
+        }
+      },
+      "description": "User account 'New Employee' updated (activated) via Microsoft Entra ID provisioning."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:00:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "user_activity",
+    "message": {
+      "activity_type": "Report_Generation",
+      "user_id": "operations_manager",
+      "report_name": "Production_Efficiency_Report",
+      "report_format": "Excel",
+      "filters_applied": {
+        "date_range": "2024-06-01 to 2024-06-21",
+        "production_lines": ["Line-A", "Line-B", "Line-C"]
+      },
+      "execution_time_ms": 3200,
+      "records_processed": 8500,
+      "description": "User 'operations_manager' generated Production Efficiency Report for June 2024."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:05:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "user_activity",
+    "message": {
+      "activity_type": "Data_Import",
+      "user_id": "data_analyst",
+      "target_entity": "Customer_Data",
+      "import_format": "CSV",
+      "file_name": "customer_update_20240621.csv",
+      "records_imported": 1250,
+      "records_failed": 3,
+      "validation_errors": [
+        "Invalid email format for customer ID: CUST-001",
+        "Missing required field for customer ID: CUST-002"
+      ],
+      "description": "User 'data_analyst' imported 1250 customer records with 3 validation errors."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:10:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "user_activity",
+    "message": {
+      "activity_type": "Workflow_Approval",
+      "user_id": "approval_manager",
+      "workflow_name": "Purchase_Order_Approval",
+      "action": "approved",
+      "document_id": "PO-2024-001234",
+      "approval_level": 2,
+      "comments": "Budget approved for Q3 requirements",
+      "response_time_minutes": 45,
+      "description": "User 'approval_manager' approved Purchase Order PO-2024-001234 at level 2."
+    }
+  }
+] 

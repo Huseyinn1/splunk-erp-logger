@@ -1,0 +1,88 @@
+[
+  {
+    "timestamp": "2024-06-21T14:20:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "user_activity",
+    "message": {
+      "event_type": "Synchronizing",
+      "user_id": "field_tech_01",
+      "device_id": "mobile_device_abc",
+      "application_name": "IFS_Field_Service",
+      "log_level": "Info",
+      "entity_data": "Service_Tasks",
+      "status": "Success",
+      "records_synced": 15,
+      "description": "Mobile user 'field_tech_01' successfully synchronized 15 Service Tasks records."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:25:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "user_activity",
+    "message": {
+      "user_id": "procurement_user",
+      "action": "create_resource",
+      "resource_type": "PurchaseRequisition",
+      "resource_id": "PR-005679",
+      "http_method": "POST",
+      "request_payload": {
+        "PartNo": "PART-A123",
+        "Quantity": 100,
+        "RequiredDate": "2024-07-30",
+        "Notes": "Urgent requirement for production line."
+      },
+      "response_status": 201,
+      "description": "User 'procurement_user' created new Purchase Requisition PR-005679 via OData API."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:30:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "user_activity",
+    "message": {
+      "event_type": "Report_Generation",
+      "user_id": "finance_analyst",
+      "report_name": "Monthly_Financial_Summary",
+      "report_format": "PDF",
+      "filters_applied": {
+        "date_range": "2024-05-01 to 2024-05-31",
+        "departments": ["Sales", "Marketing", "Operations"]
+      },
+      "execution_time_ms": 2500,
+      "records_processed": 15000,
+      "description": "User 'finance_analyst' generated Monthly Financial Summary report for May 2024."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:35:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "user_activity",
+    "message": {
+      "event_type": "Data_Query",
+      "user_id": "inventory_manager",
+      "query_type": "Stock_Level_Check",
+      "target_entity": "Inventory",
+      "filters": {
+        "warehouse": "WH-001",
+        "min_stock_level": 10
+      },
+      "results_count": 45,
+      "execution_time_ms": 120,
+      "description": "User 'inventory_manager' queried inventory stock levels for warehouse WH-001."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:40:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "user_activity",
+    "message": {
+      "event_type": "Session_Logout",
+      "user_id": "hr_manager",
+      "session_id": "session-hr-456-def",
+      "session_duration_minutes": 180,
+      "ip_address": "192.168.1.150",
+      "client_application": "IFS Aurena Web",
+      "description": "User 'hr_manager' logged out after 3 hours of active session."
+    }
+  }
+] 
