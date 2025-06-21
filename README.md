@@ -135,6 +135,14 @@ splunk-erp-logger/
 └── DOCUMENTATION.md          # Detaylı dokümantasyon
 ```
 
+## Ekran Görüntüleri
+
+### Infor
+![erplog](https://github.com/user-attachments/assets/d8da32a6-223e-4262-9760-d972353351f6)
+
+### IFS
+![erp-2](https://github.com/user-attachments/assets/51d79fb8-8af4-44df-ac28-4070e2ef240f)
+
 **Not:** `app/logs/` klasörü ve `app.log` dosyası uygulama çalıştırıldığında otomatik olarak oluşturulur.
 
 ## Detaylı Bilgi
