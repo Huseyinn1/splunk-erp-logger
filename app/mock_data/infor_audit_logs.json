@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": "2024-06-21T13:40:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "audit",
+    "message": {
+      "message_type": 3,
+      "category": "Database",
+      "user_name": "finance_mgr",
+      "date_time": "2024-06-21 13:40:00",
+      "log_description": "GeneralLedgerAccount",
+      "message_description": "Database: Update",
+      "primary_key": "GL-1001-USD",
+      "old_value": "Active",
+      "new_value": "Inactive",
+      "description": "User 'finance_mgr' updated General Ledger Account GL-1001-USD status from Active to Inactive."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T13:45:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "audit",
+    "message": {
+      "GDPRname": "Jane Doe",
+      "GDPRemail": "jane.doe@example.com",
+      "GDPRphone": "+1-555-0123",
+      "GDPRaddress": "123 Main St, Anytown, USA",
+      "audit_action": "GDPR_Data_Export",
+      "user_id": "compliance_officer",
+      "description": "Personal data for Jane Doe exported for GDPR compliance verification."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T13:50:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "audit",
+    "message": {
+      "message_type": 1,
+      "category": "Authentication",
+      "user_name": "sales_rep_anna",
+      "date_time": "2024-06-21 13:50:00",
+      "log_description": "User Login",
+      "message_description": "Authentication: Success",
+      "ip_address": "192.168.1.100",
+      "session_id": "sess_xyz789",
+      "description": "User 'sales_rep_anna' successfully logged in from IP 192.168.1.100."
+    }
+  }
+]

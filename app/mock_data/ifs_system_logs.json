@@ -1,0 +1,55 @@
+[
+  {
+    "timestamp": "2024-06-21T14:00:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "system",
+    "message": {
+      "Content": "Failed to connect to external payment gateway. Connection timed out after 30 seconds.",
+      "DATETIME": "2024-06-21 14:00:00",
+      "EntryCode": "E",
+      "EntryType": "ERROR",
+      "isourcetype": "ifs",
+      "JobNumber": "98765",
+      "Jobname": "PaymentProcessor",
+      "PathName": "/ifs/logs/integration/payment.log",
+      "Program": "PaymentService",
+      "SystemName": "IFSPROD02",
+      "Username": "INTEGRATION_USER",
+      "RemoteAddress": "10.0.0.150",
+      "RemotePort": "443",
+      "description": "Integration error: External payment gateway connection failed."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:05:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "system",
+    "message": {
+      "application_name": "InventoryAdjustment",
+      "category": "WARNING",
+      "in_text": "Inventory adjustment for Part 'XYZ-001' resulted in negative stock. Review required.",
+      "indent_on_call_depth": false,
+      "indent_offset": 3,
+      "description": "Inventory warning: Negative stock detected after adjustment."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:10:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "system",
+    "message": {
+      "Content": "Database connection pool exhausted. Creating new connections.",
+      "DATETIME": "2024-06-21 14:10:00",
+      "EntryCode": "I",
+      "EntryType": "INFO",
+      "isourcetype": "ifs",
+      "JobNumber": "12345",
+      "Jobname": "DatabaseManager",
+      "PathName": "/ifs/logs/database/connection.log",
+      "Program": "ConnectionPool",
+      "SystemName": "IFSPROD02",
+      "Username": "SYSTEM",
+      "description": "Database connection pool management event."
+    }
+  }
+]

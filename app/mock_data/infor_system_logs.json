@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": "2024-06-21T13:30:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "system",
+    "message": {
+      "api_suite": "InventoryManagementAPI",
+      "endpoint": "/inventory/v1/items/query",
+      "http_method": "GET",
+      "response_code": 200,
+      "user_id": "inventory_service_user",
+      "correlation_id": "corr-5f6g7h8i-9j0k",
+      "duration_ms": 85,
+      "request_size_bytes": 120,
+      "response_size_bytes": 1500,
+      "description": "Inventory item query API call successful."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T13:35:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "system",
+    "message": {
+      "TransIdentifier": "SALES_ORDER_SYNC_54321",
+      "LogMessageSentDate": "20240621133500",
+      "ExtSite": "CRM_System_A",
+      "LogDesc": "Sales Order SO-98765 synchronized to external CRM system with status 'Completed'.",
+      "raw_xml_snippet_example": "<IDORequest><RequestHeader Type=\"UpdateCollection\"><RequestData><UpdateCollection Name=\"MGCore.ExtSystemTransLogs\"><Items><Item Action=\"Insert\"><Property Name=\"TransIdentifier\">SALES_ORDER_SYNC_54321</Property><Property Name=\"LogMessageSentDate\">20240621133500</Property><Property Name=\"ExtSite\">CRM_System_A</Property><Property Name=\"LogDesc\">Sales Order SO-98765 synchronized to external CRM system with status 'Completed'.</Property></Item></Items></UpdateCollection></RequestData></RequestHeader></IDORequest>"
+    }
+  },
+  {
+    "timestamp": "2024-06-21T13:40:00Z",
+    "source_system": "Infor CloudSuite",
+    "log_type": "system",
+    "message": {
+      "api_suite": "OrderManagementAPI",
+      "endpoint": "/orders/v1/create",
+      "http_method": "POST",
+      "response_code": 500,
+      "user_id": "order_service_user",
+      "correlation_id": "corr-1a2b3c4d-5e6f",
+      "duration_ms": 2500,
+      "request_size_bytes": 450,
+      "response_size_bytes": 200,
+      "error_message": "Database connection timeout",
+      "description": "Order creation API call failed due to database timeout."
+    }
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "timestamp": "2024-06-21T14:10:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "audit",
+    "message": {
+      "event_id": "AUDIT-20240621-002",
+      "class": "data_modification",
+      "event": "update",
+      "connection_id": "sess_def456",
+      "account": {
+        "user": "sysadmin",
+        "host": "client_ip_10.0.0.25"
+      },
+      "target_table": "SupplierInfo",
+      "record_id": "SUP-00123",
+      "changed_fields": {
+        "status": {
+          "old_value": "Active",
+          "new_value": "Inactive"
+        }
+      },
+      "description": "Supplier SUP-00123 status changed to 'Inactive' by sysadmin."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:15:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "audit",
+    "message": {
+      "event_type": "User_Login_Success",
+      "user_id": "system_admin",
+      "session_id": "session-abc-123-xyz",
+      "ip_address": "192.168.1.200",
+      "login_method": "OpenID Connect",
+      "client_application": "IFS Aurena Web",
+      "description": "User 'system_admin' successfully logged in from IP 192.168.1.200 using IFS Aurena Web."
+    }
+  },
+  {
+    "timestamp": "2024-06-21T14:20:00Z",
+    "source_system": "IFS Applications",
+    "log_type": "audit",
+    "message": {
+      "event_id": "AUDIT-20240621-003",
+      "class": "data_modification",
+      "event": "insert",
+      "connection_id": "sess_ghi789",
+      "account": {
+        "user": "procurement_user",
+        "host": "client_ip_10.0.0.30"
+      },
+      "target_table": "PurchaseOrder",
+      "record_id": "PO-00456",
+      "changed_fields": {
+        "order_date": "2024-06-21",
+        "supplier_id": "SUP-00456",
+        "total_amount": 15000.00
+      },
+      "description": "New Purchase Order PO-00456 created by procurement_user."
+    }
+  }
+]

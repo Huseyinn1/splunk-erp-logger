@@ -1,0 +1,67 @@
+# Log Collector Configuration
+log_collector:
+  # Genel ayarlar
+  interval_minutes: 5
+  max_retries: 3
+  retry_delay_seconds: 30
+  
+  # Log dosyaları
+  log_file: "app/logs/app.log"
+  log_level: "INFO"
+  
+  # Mock veri ayarları (gerçek API'ye geçiş için değiştirilecek)
+  use_mock_data: true
+  mock_data_path: "app/mock_data"
+
+# IFS Applications ayarları
+ifs:
+  enabled: true
+  # API bilgileri .env dosyasından alınacak
+  api_base_url: ""  # IFS_API_BASE_URL environment variable
+  username: ""      # IFS_USERNAME environment variable
+  password: ""      # IFS_PASSWORD environment variable
+  timeout_seconds: 30
+  
+  # Log türleri
+  system_logs:
+    enabled: true
+    endpoint: "/system/logs"
+    last_check_file: "app/logs/ifs_system_last_check.txt"
+  
+  audit_logs:
+    enabled: true
+    endpoint: "/audit/logs"
+    last_check_file: "app/logs/ifs_audit_last_check.txt"
+
+# Infor CloudSuite ayarları
+infor:
+  enabled: true
+  # API bilgileri .env dosyasından alınacak
+  api_base_url: ""  # INFOR_API_BASE_URL environment variable
+  username: ""      # INFOR_USERNAME environment variable
+  password: ""      # INFOR_PASSWORD environment variable
+  timeout_seconds: 30
+  
+  # Log türleri
+  system_logs:
+    enabled: true
+    endpoint: "/system/logs"
+    last_check_file: "app/logs/infor_system_last_check.txt"
+  
+  audit_logs:
+    enabled: true
+    endpoint: "/audit/logs"
+    last_check_file: "app/logs/infor_audit_last_check.txt"
+
+# Splunk HEC ayarları
+splunk:
+  enabled: true
+  # HEC bilgileri .env dosyasından alınacak
+  hec_url: ""       # SPLUNK_HEC_URL environment variable
+  hec_token: ""     # SPLUNK_HEC_TOKEN environment variable
+  username: ""      # SPLUNK_USERNAME environment variable
+  password: ""      # SPLUNK_PASSWORD environment variable
+  sourcetype: "erp_logs"
+  index: "main"
+  timeout_seconds: 30
+  verify_ssl: false  # Geliştirme ortamı için false, production'da true olmalı
