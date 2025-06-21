@@ -34,7 +34,6 @@ venv.bak/
 
 # Logs
 *.log
-app/logs/
 
 # IDE
 .vscode/

@@ -1,6 +1,8 @@
 # ERP Log Collector
 
-Infor CloudSuite ve IFS Applications ERP sistemlerinden log verilerini toplayan ve Splunk'a gönderen Python uygulaması.
+Infor CloudSuite ve IFS Applications ERP sistemlerinden **sistem logları** ve **audit logları** toplayan ve Splunk'a gönderen Python uygulaması.
+
+**Not:** Bu uygulama ERP sistemlerinden gelen logları toplar ve Splunk'a iletir. Uygulamanın kendi logları değil, ERP sistemlerinin logları gönderilir.
 
 ## Özellikler
 
@@ -19,8 +21,8 @@ Infor CloudSuite ve IFS Applications ERP sistemlerinden log verilerini toplayan 
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone <repository-url>
-cd log_collector
+git clone https://github.com/Huseyinn1/splunk-erp-logger.git
+cd splunk-erp-logger
 ```
 
 2. **Sanal ortam oluşturun:**
@@ -119,9 +121,10 @@ sourcetype="erp_logs" message.EntryType="ERROR"
 ## Proje Yapısı
 
 ```
-log_collector/
+splunk-erp-logger/
 ├── app/
 │   ├── config/config.yaml     # Yapılandırma
+│   ├── logs/                  # Uygulama logları (otomatik oluşur)
 │   ├── mock_data/             # Mock veriler
 │   └── src/                   # Kaynak kodlar
 ├── .env                       # Environment variables (git'e commit edilmez)
@@ -131,6 +134,8 @@ log_collector/
 ├── README.md                 # Bu dosya
 └── DOCUMENTATION.md          # Detaylı dokümantasyon
 ```
+
+**Not:** `app/logs/` klasörü ve `app.log` dosyası uygulama çalıştırıldığında otomatik olarak oluşturulur.
 
 ## Detaylı Bilgi
 
@@ -144,6 +149,10 @@ Kapsamlı kullanım kılavuzu ve teknik detaylar için [DOCUMENTATION.md](DOCUME
 - ✅ Splunk HEC bağlantısı
 - ✅ Zamanlanmış çalışma (5 dakika aralıkla)
 - ✅ 12 log başarıyla gönderildi
+- ✅ Uygulama logları başarıyla Splunk'a iletildi
+- ✅ Zamanlama mekanizması 1 dakika aralıklarla çalışıyor
+- ✅ IFS ve Infor logları düzenli olarak toplanıyor
+- ✅ Splunk HEC entegrasyonu sorunsuz çalışıyor
 
 ## Güvenlik
 
@@ -154,4 +163,4 @@ Kapsamlı kullanım kılavuzu ve teknik detaylar için [DOCUMENTATION.md](DOCUME
 
 ## Lisans
 
-Bu proje açık kaynak olarak geliştirilmiştir. 
+Bu proje açık kaynak olarak geliştirilmiştir.
