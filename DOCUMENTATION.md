@@ -244,9 +244,6 @@ python test_splunk.py
 - Performance monitoring
 - Data retention policies
 
-## 📞 Destek
-
-Sorularınız için proje sahibi ile iletişime geçebilirsiniz.
 
 ---
 
